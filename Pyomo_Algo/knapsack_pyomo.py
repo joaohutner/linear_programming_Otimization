@@ -14,7 +14,7 @@ m = ConcreteModel()
 m.x = Var(items, within=Binary)
 
 # Objective
-m.value = Objective(expr=sum(v[i]*m.x[i] for i in items), sense=minimize)
+m.value = Objective(expr=sum(v[i]*m.x[i] for i in items), sense=maximize)
 
 # Constraint
 m.weight = Constraint(expr=sum(w[i]*m.x[i] for i in items) <= limit)
